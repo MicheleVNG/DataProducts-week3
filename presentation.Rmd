@@ -1,0 +1,42 @@
+---
+title: "My Presentation"
+subtitle: "Week 3 Assignment"
+author: "Michele Vangelista"
+date: "27 march 2017"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+    widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+## My Plot
+
+The following slide presents a plot that makes use of the `Quandl` library
+for retrieving US GDP data, and creates a simple plot with that.
+
+```{r, echo=TRUE, eval=FALSE}
+library(Quandl)
+library(plotly)
+
+df <- Quandl("FRED/GDP")
+plot_ly(df, x = ~DATE, y = ~VALUE, mode = "scatter")
+```
+
+## United States GDP over time
+
+There we go!
+
+```{r}
+library(Quandl)
+library(plotly)
+
+df <- Quandl("FRED/GDP")
+plot_ly(df, x = ~DATE, y = ~VALUE, mode = "scatter")
+```
+
+
+# Thanks
